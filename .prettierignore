@@ -1,0 +1,4 @@
+package-lock.json
+**/generated/**/*
+**/public/mockServiceWorker.js
+**/*.schema.json

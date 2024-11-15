@@ -1,0 +1,17 @@
+{
+  "version": "0.2",
+  "ignorePaths": [],
+  "dictionaryDefinitions": [],
+  "dictionaries": [],
+  "words": [
+    "classmethod",
+    "cqrs",
+    "inversify",
+    "Minio",
+    "pkgs",
+    "sortby",
+    "undici"
+  ],
+  "ignoreWords": [],
+  "import": []
+}

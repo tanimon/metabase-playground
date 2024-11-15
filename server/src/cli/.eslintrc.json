@@ -1,0 +1,6 @@
+{
+  "extends": "../../.eslintrc.json",
+  "rules": {
+    "strict-dependencies/strict-dependencies": "off"
+  }
+}

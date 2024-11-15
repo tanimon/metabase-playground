@@ -1,0 +1,13 @@
+{
+  "extends": "../tsconfig.json",
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "outDir": "./tsc-cache",
+    "module": "ESNext",
+    "moduleResolution": "Node"
+  }
+}

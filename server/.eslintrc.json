@@ -1,0 +1,160 @@
+{
+  "extends": "../.eslintrc.json",
+  "plugins": ["strict-dependencies"],
+  "rules": {
+    "strict-dependencies/strict-dependencies": [
+      "error",
+      [
+        // アプリケーション
+        {
+          "module": "src/cli",
+          "allowReferenceFrom": [],
+          "allowSameModule": true
+        },
+        {
+          "module": "src/di-container",
+          "allowReferenceFrom": ["src/handler", "src/cli"],
+          "allowSameModule": true
+        },
+        {
+          "module": "src/domain",
+          "allowReferenceFrom": [
+            "src/di-container",
+            "src/cli",
+            "src/handler",
+            "src/infrastructure",
+            "src/use-case"
+          ],
+          "allowSameModule": true
+        },
+        {
+          "module": "src/handler",
+          "allowReferenceFrom": [],
+          "allowSameModule": true
+        },
+        {
+          "module": "src/infrastructure",
+          "allowReferenceFrom": [
+            "src/di-container",
+            "src/cli",
+            "src/**/*.medium.test.ts"
+          ],
+          "allowSameModule": true
+        },
+        {
+          "module": "src/testing-util",
+          "allowReferenceFrom": [
+            "src/handler",
+            "src/cli",
+            "src/di-container",
+            "src/infrastructure",
+            "src/**/*.medium.test.ts"
+          ],
+          "allowSameModule": true
+        },
+        {
+          "module": "src/use-case",
+          "allowReferenceFrom": [
+            "src/di-container",
+            "src/cli",
+            "src/handler",
+            "src/infrastructure/cqrs"
+          ],
+          "allowSameModule": true
+        },
+
+        // ライブラリ
+        {
+          "module": "@aws-crypto/*",
+          "allowReferenceFrom": ["src/infrastructure"],
+          "allowSameModule": true
+        },
+        {
+          "module": "@aws-sdk/*",
+          "allowReferenceFrom": [
+            "src/infrastructure",
+            "src/di-container",
+            "src/cli",
+            "src/testing-util",
+            "src/handler/init-handler",
+            "src/handler/line-app/handler",
+            "src/**/*.medium.test.ts"
+          ],
+          "allowSameModule": true
+        },
+        {
+          "module": "aws-xray-sdk",
+          "allowReferenceFrom": ["src/handler"],
+          "allowSameModule": true
+        },
+        {
+          "module": "dayjs",
+          "allowReferenceFrom": ["src/util"],
+          "allowSameModule": true
+        },
+        {
+          "module": "dotenv",
+          "allowReferenceFrom": ["src/handler", "src/cli"],
+          "allowSameModule": true
+        },
+        {
+          "module": "fs-extra",
+          "allowReferenceFrom": ["src/cli", "src/util", "src/infrastructure"],
+          "allowSameModule": true
+        },
+        {
+          "module": "get-stream",
+          "allowReferenceFrom": [
+            "src/infrastructure",
+            "src/**/*.medium.test.ts"
+          ],
+          "allowSameModule": true
+        },
+        {
+          "module": "inquirer",
+          "allowReferenceFrom": ["src/cli"],
+          "allowSameModule": true
+        },
+        {
+          "module": "inversify",
+          "allowReferenceFrom": ["src/handler", "src/cli", "src/di-container"],
+          "allowSameModule": true
+        },
+        {
+          "module": "lodash.chunk",
+          "allowReferenceFrom": ["src/util"],
+          "allowSameModule": true
+        },
+        {
+          "module": "lodash.sortby",
+          "allowReferenceFrom": ["src/util"],
+          "allowSameModule": true
+        },
+        {
+          "module": "source-map-support",
+          "allowReferenceFrom": ["src/handler", "src/cli"],
+          "allowSameModule": true
+        },
+        {
+          "module": "undici",
+          "allowReferenceFrom": [
+            "src/infrastructure",
+            "src/cli",
+            "src/**/*.medium.test.ts"
+          ],
+          "allowSameModule": true
+        },
+        {
+          "module": "uuid",
+          "allowReferenceFrom": ["src/infrastructure", "src/**/*.test.ts"],
+          "allowSameModule": true
+        },
+        {
+          "module": "zod",
+          "allowReferenceFrom": ["src/handler", "src/infrastructure"],
+          "allowSameModule": true
+        }
+      ]
+    ]
+  }
+}
