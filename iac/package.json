@@ -11,6 +11,7 @@
     "check:format": "prettier --cache -c '**/*.{ts,json,yml,yaml,md}'",
     "check:lint": "eslint --cache --max-warnings 0 '**/*.ts'",
     "check:tsc": "tsc",
+    "deploy": "cdk deploy --require-approval never --all",
     "fix": "run-s fix:format fix:lint check:tsc",
     "fix:format": "prettier --cache --write '**/*.{ts,json,yml,yaml,md}'",
     "fix:lint": "eslint --cache --max-warnings 0 --fix '**/*.{ts,tsx}'",
@@ -20,8 +21,9 @@
     "watch": "tsc -w"
   },
   "dependencies": {
-    "@aws-cdk/aws-apprunner-alpha": "2.167.0-alpha.0",
-    "aws-cdk-lib": "2.167.0",
+    "@aws-cdk/aws-apprunner-alpha": "2.166.0-alpha.0",
+    "@aws-cdk/aws-glue-alpha": "2.166.0-alpha.0",
+    "aws-cdk-lib": "2.166.0",
     "constructs": "10.4.2",
     "source-map-support": "0.5.21"
   },
